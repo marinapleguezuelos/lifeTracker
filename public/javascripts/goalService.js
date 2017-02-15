@@ -10,6 +10,12 @@ angular.module('goalService', [])
         },
         delete : function(id) {
             return $http.delete('/goals/' + id);
+        },
+        addOk : function(id) {
+            return $http.put('/goals/' + id + '/ok');
+        },
+        addKo : function(id) {
+            return $http.put('/goals/' + id + '/ko');
         }
     }
 });

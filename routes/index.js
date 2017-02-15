@@ -37,6 +37,20 @@ router.post('/goals', function(req, res, next) {
   });
 });
 
+router.put('/goals/:goal/ok', function(req, res) {
+  req.goal.addOk(function(err, goal) {
+    if (err) { return next(err); }
+    res.json(goal);
+  });
+});
+
+router.put('/goals/:goal/ko', function(req, res) {
+  req.goal.addKo(function(err, goal) {
+    if (err) { return next(err); }
+    res.json(goal);
+  });
+});
+
 router.delete('/goals/:goal', function(req, res, next) {
   Goal.remove({_id: req.params.goal}, function (err) {
   if (err) { return next(err); }

@@ -26,9 +26,9 @@
       <div id="navbar" class="navbar-collapse navbar-right collapse">
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="#">Goals</a></li>
-          <li><a href="tracker.html">Track</a></li>
-          <li><a href="analyse.html">Analyse</a></li>
+          <li><a href="goals.html">Goals</a></li>
+          <li class="active"><a href="tracker.html">Track</a></li>
+          <li><a href="#contact">Analyse</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -37,38 +37,27 @@
     <div class="form-horizontal tracker-form">
       <div class="row tracker-heading">
         <div class="col-md-6 col-md-offset-3">
-          <h2> <p align="center">My goals </p></h2>
+          <h2>Tracker</h2>
         </div>
       </div>
       <div ng-repeat="goal in goals" class="form-group row form-row">
         <div class="col-xs-1">
+          <label class="btn btn-default">
+            <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
+          </label>
         </div>
-        <div class="col-xs-9 goal">{{goal.description}} </div>
-        <div class="col-xs-1 goal">
-          <div class="pull-right"> {{goal.percentage}}% </div>
-        </div>
+        <div class="col-xs-10 goal">{{goal.description}}</div>
         <div class="col-xs-1">
           <div class="pull-right">
             <label class="btn btn-danger">
-              <span class="glyphicon glyphicon-trash" aria-hidden="true" ng-click="removeGoal(goal)"></span>
+              <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk(goal)"></span>
+            </label>
+            <label class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo(goal)"></span>
             </label>
           </div>
         </div>
       </div>
-      <form ng-submit="addGoal()">
-        <div class="row form-row">
-          <div class="col-xs-10 col-xs-offset-1 goal">
-            <input type="text" ng-model="goalName" class="form-control" placeholder="New goal"/>
-          </div>
-          <div class="col-xs-1">
-            <div class="pull-right">
-              <button type="submit" class="btn btn-success">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
     </div>
 
     <hr>
@@ -82,16 +71,5 @@
   <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
-  <!-- Google Analytics -->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-91190342-1', 'auto');
-  ga('send', 'pageview');
-
-  </script>
 </body>
 </html>

@@ -27,39 +27,44 @@
         <ul class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
           <li><a href="goals.html">Goals</a></li>
-          <li class="active"><a href="tracker.html">Track</a></li>
-          <li><a href="#contact">Analyse</a></li>
+          <li><a href="tracker.html">Track</a></li>
+          <li class="active"><a href="analysis.html">Analyse</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <div class="container">
     <div class="form-horizontal tracker-form">
+      <h2 align="center"><b>Analysis</b></h2>
       <div class="row tracker-heading">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Tracker</h2>
+        <div class align="center">
+        <div class="col-md-2">
+          <h3><b>Existing Goals</b></h3>
+        </div>
+        <div class="col-md-2 col-md-offset-3">
+        <h3><b>Days Accomplished</b></h3>
+        </div>
+        <div class="col-md-2 col-md-offset-3">
+        <h3><b>Days Uncomplished</b></h3>
         </div>
       </div>
       <div ng-repeat="goal in goals" class="form-group row form-row">
-        <div class="col-xs-1">
-          <label class="btn btn-default">
-            <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
-          </label>
+        <div class="col-xs-2 goal">{{goal.description}}</div>
+        <div class="col-xs-2 col-md-offset-3">
+        <div class align='center'>
+          <button type="button" class="btn btn-success">{{goal.ok}}</button>
         </div>
-        <div class="col-xs-10 goal">{{goal.description}}</div>
-        <div class="col-xs-1">
-          <div class="pull-right">
-            <label class="btn btn-danger">
-              <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk(goal)"></span>
-            </label>
-            <label class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo(goal)"></span>
-            </label>
-          </div>
         </div>
+        <div class="col-md-2 col-md-offset-3">
+          <div class align='center'>
+          <button type="button" class="btn btn-danger">{{goal.ko}}</button>
+        </div>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">{{goal.percentage}}%</button>
+ <div id="demo" class="collapse">
+</div>
       </div>
     </div>
-
     <hr>
     <footer>
       <p>&copy; 2017 SEK Catalunya</p>

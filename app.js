@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('./models/Goals');
+require('./models/Days');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/laag');
 

@@ -1,7 +1,7 @@
 angular.module('goalController', [])
 .controller('goalCtrl', function($scope, $http, Goals) {
   Goals.get().success(function(data) {
-    $scope.loadDay(null, data);
+    $scope.loadDay(new Date(), data);
   });
   $scope.loadDay = function(date, goals) {
     Goals.getDay(date).success(function(day) {

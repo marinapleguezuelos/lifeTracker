@@ -24,3 +24,23 @@ body {
   font-size: 3ex;
   vertical-align: bottom;
 }
+.strike {
+    text-decoration: line-through;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.has-error {
+    color: white;
+    background-color: red;
+}
+.white {
+    color: white;
+}
+.has-true {
+  color: white;
+  background-color: green;
+}

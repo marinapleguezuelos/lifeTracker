@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var DaySchema = new mongoose.Schema({
   day: Date,
   goals: [mongoose.Schema.Types.Mixed]
-}, { collection: 'jesus-days' });
+}, { collection: 'marina-days' });
 
 DaySchema.methods.addOk = function(goalId, callback) {
   for (var i = 0; i < this.goals.length; i++) {
